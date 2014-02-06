@@ -1,15 +1,17 @@
 {
   "name": "generator-drupalbase",
-  "version": "0.0.0",
-  "description": "A generator for Yeoman",
+  "version": "0.1.0",
+  "description": "A Yeoman generator for Drupal",
   "keywords": [
-    "yeoman-generator"
+    "drupal-generator",
+    "drupal-generator",
+    "yeoman-drupal-generator"
   ],
   "homepage": "https://github.com/marclloyd77/generator-drupalbase",
   "bugs": "https://github.com/marclloyd77/generator-drupalbase/issues",
   "author": {
-    "name": "",
-    "email": "",
+    "name": "Marc Lloyd",
+    "email": "marc@marclloyd.co.uk",
     "url": "https://github.com/marclloyd77"
   },
   "main": "app/index.js",
@@ -17,14 +19,17 @@
     "type": "git",
     "url": "git://github.com/marclloyd77/generator-drupalbase.git"
   },
-  "scripts": {
-    "test": "mocha"
-  },
   "dependencies": {
-    "yeoman-generator": "~0.14.0"
+    "yeoman-generator": "~0.14.0",
+    "shelljs": "~0.2.6"
   },
   "devDependencies": {
-    "mocha": "~1.14.0"
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-contrib-imagemin": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-copy": "~0.5.0"
   },
   "peerDependencies": {
     "yo": ">=1.0.0"
