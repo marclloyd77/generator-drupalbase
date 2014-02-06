@@ -1,6 +1,9 @@
 'use strict';
 
 //1) Download Drupal
+//2) Create the configuration file and grant permissions
+//3) Create database
+//4) Open install page
 
 
 var util = require('util'),
@@ -72,7 +75,7 @@ DrupalbaseGenerator.prototype.askFor = function askFor() {
 DrupalbaseGenerator.prototype.DownloadDrupal = function DownloadDrupal() {
     var cb   = this.async();
 
-    this.log.writeln('\n***********************************************\n** Downloading the latest Version of Drupal **\n************************************************');
+    this.log.writeln('\n**********************************************\n** Downloading the latest Version of Drupal **\n**********************************************');
     this.tarball('http://ftp.drupal.org/files/projects/drupal-' + this.drupalVersion + '.zip', './', cb);
 };
 
@@ -80,7 +83,7 @@ DrupalbaseGenerator.prototype.DownloadDrupal = function DownloadDrupal() {
 // Create the configuration file and grant permissions
 DrupalbaseGenerator.prototype.configAndPermissions = function configAndPermissions() {
 
-    this.log.writeln('\n***********************************************\n** Creating configuration file and granting permissions **\n************************************************');
+    this.log.writeln('\n**********************************************************\n** Creating configuration file and granting permissions **\n**********************************************************');
     shell.exec('cp sites/default/default.settings.php sites/default/settings.php')
     shell.exec('chmod a+w sites/default/settings.php')
     shell.exec('chmod a+w sites/default')
@@ -91,4 +94,11 @@ DrupalbaseGenerator.prototype.CreateDatabase = function CreateDatabase() {
 
     this.log.writeln('\n***********************\n** Creating database **\n***********************');
     shell.exec('mysql --user="' + this.dbUser + '" --password="' + this.dbPass + '" -e "create database ' + this.dbName + '"');
+};
+
+//Open install page in browser
+DrupalbaseGenerator.prototype.OpenInstall = function OpenInstall() {
+
+    this.log.writeln('\n**************************\n** Opening install page **\n**************************');
+    shell.exec('open http://' + this.siteURL + '/install.php' );
 };
