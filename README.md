@@ -16,7 +16,7 @@ This generator will:
 To install generator-devpress from npm, run:
 
 ```
-$ npm install -g drupalbase
+$ npm install -g generator-drupalbase
 ```
 
 Finally, initiate the generator:

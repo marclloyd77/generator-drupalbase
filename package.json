@@ -1,5 +1,5 @@
 {
-    "name": "drupalbase",
+    "name": "generator-drupalbase",
     "version": "0.1.2",
     "description": "A Yeoman generator for Drupal",
     "keywords": [
